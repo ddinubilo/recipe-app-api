@@ -109,7 +109,7 @@ class PublicUserApiTests(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
-class PrivateUserApitTests(TestCase):
+class PrivateUserApiTests(TestCase):
 
     def setUp(self):
         data = {
