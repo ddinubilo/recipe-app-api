@@ -4,8 +4,9 @@ from django.utils.translation import gettext as _
 
 from core import models
 
+
 class UserAdmin(BaseUserAdmin):
-    ordering = ['id']
+    ordering = ['id',]
     list_display = ['email', 'name']
     fieldsets  = (
         (None, {'fields': ('email', 'password')}),
@@ -18,7 +19,7 @@ class UserAdmin(BaseUserAdmin):
 
     )
 
-    add_fieldsets = (
+    add_fieldsets = (  
         (None, {
             'classes': ('wide',),
             'fields': ('email', 'password1', 'password2')
