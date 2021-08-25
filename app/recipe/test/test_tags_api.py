@@ -14,7 +14,7 @@ TAGS_URL = reverse('recipe:tag-list')
 def create_user(**params):
     return get_user_model().objects.create_user(**params)
 
-class PublicTagsApitTests(TestCase):
+class PublicTagsApiTests(TestCase):
     """Test the publicly available tags API"""
 
     def setUp(self):
@@ -52,7 +52,7 @@ class PrivateTagsApiTests(TestCase):
         self.assertEqual(res.data, serializer.data)
 
     def test_tags_limited_to_user(self):
-        """ Test that tgas returned are for the authenticated user"""
+        """ Test that tags returned are for the authenticated user"""
         data2 = {
             'email': 'test2@dinubilo.com',
             'password': 'testpassword123',
